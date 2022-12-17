@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20cade0d-1857-4b37-bdb3-2b7bac26cf55" name="Changes" comment="task 1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bekhter/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="20cade0d-1857-4b37-bdb3-2b7bac26cf55" name="Changes" comment="task 1.1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bekhter/CityUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/city_ru.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/city_ru.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bekhter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bekhter/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,9 +42,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/nvbek/IdeaProjects/эталонные решения/1 ╨╝╨╛╨┤╤Г╨╗╤М"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nvbek\IdeaProjects\cities\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.bekhter.Main" />
@@ -82,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671288778128</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="task 1.1">
+      <created>1671300100490</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671300100490</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,17 +111,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="task 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="task 1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/bekhter/Main.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="task 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="task 1.1" />
   </component>
 </project>
