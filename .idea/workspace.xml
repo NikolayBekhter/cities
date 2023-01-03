@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20cade0d-1857-4b37-bdb3-2b7bac26cf55" name="Changes" comment="task 2">
+    <list default="true" id="20cade0d-1857-4b37-bdb3-2b7bac26cf55" name="Changes" comment="task 3">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bekhter/CityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bekhter/CityUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bekhter/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bekhter/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
