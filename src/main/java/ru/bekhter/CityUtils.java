@@ -2,7 +2,6 @@ package ru.bekhter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.MessageFormat;
 import java.util.*;
 
 public class CityUtils {
@@ -20,20 +19,6 @@ public class CityUtils {
         }
         scanner.close(); // Не забываем вызвать метод закрытия потока данных
         return cities;
-    }
-
-    public static void searchСityMaxPopulation(List<City> cities) {
-        City[] array = cities.toArray(new City[0]);
-        int max = 0;
-        int index = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].getPopulation() > max) {
-                max = array[i].getPopulation();
-                index = i;
-            }
-        }
-        System.out.println(MessageFormat.format("[{0}]={1}", index, max));
-
     }
 
     private static City parse(String line) {
