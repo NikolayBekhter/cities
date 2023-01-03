@@ -2,9 +2,8 @@ package ru.bekhter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.text.MessageFormat;
+import java.util.*;
 
 public class CityUtils {
 
@@ -23,8 +22,18 @@ public class CityUtils {
         return cities;
     }
 
-    public static void print(List<City> cities) {
-        cities.forEach(System.out::println);
+    public static void searchСityMaxPopulation(List<City> cities) {
+        City[] array = cities.toArray(new City[0]);
+        int max = 0;
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].getPopulation() > max) {
+                max = array[i].getPopulation();
+                index = i;
+            }
+        }
+        System.out.println(MessageFormat.format("[{0}]={1}", index, max));
+
     }
 
     private static City parse(String line) {
