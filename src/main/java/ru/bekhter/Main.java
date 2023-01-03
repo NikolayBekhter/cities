@@ -1,50 +1,47 @@
 package ru.bekhter;
 
 import java.text.MessageFormat;
-import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static ru.bekhter.CityUtils.*;
 
 public class Main {
     public static void main(String[] args) {
         List<City> cities = parse();
-        searchСityMaxPopulation(cities);
-        //searchByInsertionSort(cities);
-        //searchMaxPopulation(cities);
+        //quantityOfCitiesByRegion(cities);
+        findCountCityByRegionV1(cities);
+        //findCountCityByRegionV2(cities);
     }
 
-    private static void searchСityMaxPopulation(List<City> cities) {
-        City[] array = new City[cities.size()];
-        cities.toArray(array);
-        int current = 0;
-        int index = 0;
+    //поиск количества городов в разрезе регионов
 
-        for (int i = 1; i < array.length; i++) {
-            if (array[i].getPopulation() > current) {
-                current = array[i].getPopulation();
-                index = i;
+    private static void quantityOfCitiesByRegion(List<City> cities) {
+        cities.stream()
+                .collect(Collectors.groupingBy(City::getRegion, Collectors.counting()))
+                .forEach((s, count) -> System.out.println(s + " - " + count));
+
+    }
+
+    private static void findCountCityByRegionV1(List<City> cities) {
+        Map<String, Integer> regions = new HashMap<>();
+        for (City city : cities) {
+            if (!regions.containsKey(city.getRegion())) {
+                regions.put(city.getRegion(), 1);
+            } else {
+                regions.put(city.getRegion(), regions.get(city.getRegion()) + 1);
             }
         }
-        System.out.println(MessageFormat.format("[{0}] = {1}", index, current));
-    }
-
-    private static void searchByInsertionSort(List<City> cities) {
-        City[] array = new City[cities.size()];
-        cities.toArray(array);
-        for (int i = 1; i < array.length; i++) {
-            City current = array[i];
-            int j = i - 1;
-            while (j >= 0 && current.getPopulation() < array[j].getPopulation()) {
-                array[j + 1] = array[j];
-                j--;
-            }
-            array[j + 1] = current;
+        for (String key : regions.keySet()) {
+            System.out.println(MessageFormat.format(" {0} = {1}", key, regions.get(key)));
         }
-        System.out.println(MessageFormat.format("[{0}] = {1}", array.length - 1, array[array.length - 1]));
     }
 
-    private static void searchMaxPopulation(List<City> cities) {
-        System.out.println(cities.stream().max(Comparator.comparing(City::getPopulation)));
+    private static void findCountCityByRegionV2(List<City> cities) {
+        Map<String, Integer> regions = new HashMap<>();
+        cities.forEach(city -> regions.merge(city.getRegion(), 1, Integer::sum));
+        regions.forEach((k, v) -> System.out.println(MessageFormat.format(" {0} = {1}", k, v)));
     }
 }
