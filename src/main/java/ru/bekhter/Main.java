@@ -1,5 +1,6 @@
 package ru.bekhter;
 
+import java.text.MessageFormat;
 import java.util.Comparator;
 import java.util.List;
 
@@ -8,34 +9,42 @@ import static ru.bekhter.CityUtils.*;
 public class Main {
     public static void main(String[] args) {
         List<City> cities = parse();
-        sortByNameV1(cities); // Сортировка массива по наименованию городов, используя lambda-выражения
-        print(cities); // Вывод данных массива с городами в консоль
-
-        sortByNameV2(cities); // Сортировка массива по наименованию городов, используя java.util.Comparator
-        print(cities); // Вывод данных массива с городами в консоль
-
-        sortByDistrictAndName(cities); // Сортировка массива по федеральным округам и наименваниям городов в них
-        print(cities); // Вывод данных массива с городами в консоль
+        searchСityMaxPopulation(cities);
+        //searchByInsertionSort(cities);
+        //searchMaxPopulation(cities);
     }
 
-    private static void sortByNameV1(List<City> cities) {
-        cities.sort((o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
-    }
+    private static void searchСityMaxPopulation(List<City> cities) {
+        City[] array = new City[cities.size()];
+        cities.toArray(array);
+        int current = 0;
+        int index = 0;
 
-    private static void sortByNameV2(List<City> cities) {
-        cities.sort(new Comparator<City>() {
-            @Override
-            public int compare(City o1, City o2) {
-                return o1.getName().compareToIgnoreCase(o2.getName());
+        for (int i = 1; i < array.length; i++) {
+            if (array[i].getPopulation() > current) {
+                current = array[i].getPopulation();
+                index = i;
             }
-        });
+        }
+        System.out.println(MessageFormat.format("[{0}] = {1}", index, current));
     }
 
-    private static void sortByDistrictAndName(List<City> cities) {
-        cities.sort(Comparator.comparing(City::getDistrict).thenComparing(City::getName));
+    private static void searchByInsertionSort(List<City> cities) {
+        City[] array = new City[cities.size()];
+        cities.toArray(array);
+        for (int i = 1; i < array.length; i++) {
+            City current = array[i];
+            int j = i - 1;
+            while (j >= 0 && current.getPopulation() < array[j].getPopulation()) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = current;
+        }
+        System.out.println(MessageFormat.format("[{0}] = {1}", array.length - 1, array[array.length - 1]));
     }
 
-    public static void print(List<City> cities) {
-        cities.forEach(System.out::println);
+    private static void searchMaxPopulation(List<City> cities) {
+        System.out.println(cities.stream().max(Comparator.comparing(City::getPopulation)));
     }
 }
